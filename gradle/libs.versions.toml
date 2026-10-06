@@ -1,0 +1,12 @@
+[versions]
+slf4j = "2.0.20"
+adventure = "5.2.0"
+jspecify = "1.0.1"
+snakeyaml = "2.7"
+
+[libraries]
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+adventure-api = { module = "net.kyori:adventure-api", version.ref = "adventure" }
+adventure-minimessage = { module = "net.kyori:adventure-text-minimessage", version.ref = "adventure" }
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
