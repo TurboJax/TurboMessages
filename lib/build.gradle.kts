@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.turbojax"
-version = "1.2.2"
+version = "1.3.1"
 
 repositories {
   mavenCentral()
