@@ -1,0 +1,1 @@
+Don't read the files every time someone reads a locale.  Let them load/reload it on their own.

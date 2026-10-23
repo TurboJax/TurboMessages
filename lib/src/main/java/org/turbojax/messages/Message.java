@@ -81,19 +81,7 @@ public class Message implements ComponentLike {
      * @param placeholders The placeholders the message uses.
      * @return The new {@link Message}.  If no message was found for the given type and locale, it returns an empty message.
      */
-    public static Message translatable(String key, Locale locale, String... placeholders) {
-        return translatable(new MessageType(key, placeholders), locale);
-    }
-
-    /**
-     * Creates a new Message from a translatable message type.
-     *
-     * @param key The key of a translatable message.
-     * @param locale The locale to use for the message.
-     * @param placeholders The placeholders the message uses.
-     * @return The new {@link Message}.  If no message was found for the given type and locale, it returns an empty message.
-     */
-    public static Message translatable(String key, Locale locale, Collection<String> placeholders) {
+    public static Message translatable(String key, Locale locale, Set<String> placeholders) {
         return translatable(new MessageType(key, placeholders), locale);
     }
 
