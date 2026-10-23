@@ -54,24 +54,12 @@ public class MessageManager {
         MessageManager.defaultLocale = defaultLocale;
     }
 
-    /**
-     * Loads the language configs from `lang/base` in this class' ClassLoader.
-     * Works when TurboMessages is shaded.  If using fabric loom, use {@link MessageManager#loadBaseFiles(ClassLoader)}.
-     */
+    /** Loads the language configs from `lang/base`. */
     public static void loadBaseFiles() {
-        loadBaseFiles(MessageManager.class.getClassLoader());
-    }
-
-    /**
-     * Loads the language configs from `lang/base` in the defined ClassLoader.
-     * Specifying a class loader allows the messages api to be stored as a jar-in-jar dependency.
-     * @param source The {@link ClassLoader} that can resolve the language configs.
-     */
-    public static void loadBaseFiles(ClassLoader source) {
         // Checking that the lang/base folder exists
         URI uri;
         try {
-            var url = source.getResource("lang/base");
+            var url = MessageManager.class.getClassLoader().getResource("lang/base");
             if (url == null) {
                 Message.LOGGER.error("Failed to locate base localization files at `lang/base`");
                 return;
